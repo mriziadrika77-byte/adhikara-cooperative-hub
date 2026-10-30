@@ -35,7 +35,7 @@ export const initialCooperativesDirectory = [
     acceptanceStatus: 'Menerima Anggota Baru',
     shortDescription: 'Sentra agribisnis petani modern dengan fasilitas cold-storage terpadu dan akses kemitraan ritel premium.',
     bannerTag: 'Koperasi Unggulan 2025',
-    imageUrl: 'https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f9?auto=format&fit=crop&w=800&q=80',
     membershipRequirements: [
       'Warga Negara Indonesia berdomisili atau memiliki lahan usaha di Jawa Timur.',
       'Petani, pekebun hortikultura, atau pengolah produk pangan lokal.',
@@ -70,7 +70,7 @@ export const initialCooperativesDirectory = [
     acceptanceStatus: 'Menerima Anggota Baru',
     shortDescription: 'Layanan pembiayaan modal kerja syariah dan tabungan gotong royong bagi pegiat UMKM kreatif Jawa Barat.',
     bannerTag: 'Tersertifikasi Digital',
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     membershipRequirements: [
       'Pemilik usaha mikro, kecil, atau menengah (UMKM) dengan legalitas usaha NIB aktif.',
       'Fotokopi KTP & KK domisili Jawa Barat.',
@@ -105,7 +105,7 @@ export const initialCooperativesDirectory = [
     acceptanceStatus: 'Menerima Anggota Baru',
     shortDescription: 'Jaringan toserba komunitas gotong royong yang memotong rantai pasok sembako langsung dari produsen ke keluarga.',
     bannerTag: 'Harga Adil Komunitas',
-    imageUrl: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
     membershipRequirements: [
       'Masyarakat umum atau pekerja berdomisili di wilayah Jabodetabek.',
       'Membayar Simpanan Pokok Rp 250.000.',
@@ -139,7 +139,7 @@ export const initialCooperativesDirectory = [
     acceptanceStatus: 'Seleksi Terbatas',
     shortDescription: 'Kolektif profesional pekerja lepas (freelancer), developer, dan desainer untuk proyek skala nasional dan ekspor.',
     bannerTag: 'Kolektif Digital Kreatif',
-    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
     membershipRequirements: [
       'Pekerja profesional di bidang TI, desain grafis, animasi, riset data, atau penulisan.',
       'Menyertakan portofolio karya profesional atau rekam jejak proyek.',
@@ -174,7 +174,7 @@ export const initialCooperativesDirectory = [
     acceptanceStatus: 'Menerima Anggota Baru',
     shortDescription: 'Pemberdayaan nelayan tangkap pesisir dengan pabrik es balok mandiri dan ekspor komoditas tuna segar ramah lingkungan.',
     bannerTag: 'Perikanan Berkelanjutan',
-    imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
     membershipRequirements: [
       'Nelayan tangkap pemilik perahu atau anak buah kapal (ABK) aktif.',
       'Membayar Simpanan Pokok Rp 500.000.',
@@ -208,7 +208,7 @@ export const initialCooperativesDirectory = [
     acceptanceStatus: 'Pendaftaran Ditutup Sementara',
     shortDescription: 'Konsorsium petani kopi arabika organik dataran tinggi Gayo bersertifikasi Fairtrade dan ekspor ke 8 negara.',
     bannerTag: 'Sertifikasi Fairtrade',
-    imageUrl: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=800&q=80',
     membershipRequirements: [
       'Petani pemilik kebun kopi arabika di kawasan dataran tinggi Gayo.',
       'Memiliki sertifikasi budidaya organik atau bersedia mengikuti pendampingan ICS.',
@@ -266,7 +266,7 @@ export const cooperativeProfile = {
   foundedYear: '2021',
   address: 'Jl. Raya Agropolitan No. 45, Malang, Jawa Timur',
   totalMembers: 342,
-  coverImage: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80',
+  coverImage: 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f9?auto=format&fit=crop&w=1200&q=80',
   vision: 'Menjadi sentra koperasi agribisnis terkemuka yang berdaya saing, berkeadilan sosial, dan berkelanjutan secara digital.',
   mission: [
     'Meningkatkan produktivitas hasil tani anggota melalui teknologi budidaya dan cold-chain modern.',
@@ -282,7 +282,7 @@ export const cooperativeProfile = {
       manager: 'Ahmad Fauzi',
       revenueContribution: '35%',
       status: 'Beroperasi Aktif',
-      imageUrl: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80'
+      imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80'
     },
     {
       id: 'bu_2',
@@ -291,7 +291,7 @@ export const cooperativeProfile = {
       manager: 'Dewi Lestari',
       revenueContribution: '45%',
       status: 'Beroperasi Aktif',
-      imageUrl: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=600&q=80'
+      imageUrl: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80'
     },
     {
       id: 'bu_3',
@@ -300,7 +300,7 @@ export const cooperativeProfile = {
       manager: 'Bambang Irawan',
       revenueContribution: '20%',
       status: 'Tahap Ekspansi',
-      imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80'
+      imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'
     }
   ],
   priorities: [

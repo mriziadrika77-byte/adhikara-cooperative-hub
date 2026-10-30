@@ -35,7 +35,7 @@ export const initialCooperativesDirectory = [
     acceptanceStatus: 'Menerima Anggota Baru',
     shortDescription: 'Sentra agribisnis petani modern dengan fasilitas cold-storage terpadu dan akses kemitraan ritel premium.',
     bannerTag: 'Koperasi Unggulan 2025',
-    imageUrl: 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f9?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80',
     membershipRequirements: [
       'Warga Negara Indonesia berdomisili atau memiliki lahan usaha di Jawa Timur.',
       'Petani, pekebun hortikultura, atau pengolah produk pangan lokal.',
@@ -266,7 +266,7 @@ export const cooperativeProfile = {
   foundedYear: '2021',
   address: 'Jl. Raya Agropolitan No. 45, Malang, Jawa Timur',
   totalMembers: 342,
-  coverImage: 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f9?auto=format&fit=crop&w=1200&q=80',
+  coverImage: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80',
   vision: 'Menjadi sentra koperasi agribisnis terkemuka yang berdaya saing, berkeadilan sosial, dan berkelanjutan secara digital.',
   mission: [
     'Meningkatkan produktivitas hasil tani anggota melalui teknologi budidaya dan cold-chain modern.',

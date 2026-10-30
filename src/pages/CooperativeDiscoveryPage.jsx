@@ -252,6 +252,7 @@ export const CooperativeDiscoveryPage = ({ onNavigate }) => {
                       src={coop.imageUrl}
                       alt={coop.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => { e.target.style.display = 'none'; }}
                     />
                     <div style={{ position: 'absolute', top: '10px', left: '10px', right: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '11px', color: '#1f2937', backgroundColor: 'rgba(255, 255, 255, 0.92)', backdropFilter: 'blur(4px)', padding: '3px 8px', borderRadius: 'var(--radius-sm)', fontWeight: 700 }}>
@@ -369,6 +370,7 @@ export const CooperativeDiscoveryPage = ({ onNavigate }) => {
                   src={activeCoopDetail.imageUrl}
                   alt={activeCoopDetail.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  onError={(e) => { e.target.style.display = 'none'; }}
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 70%)' }} />
                 <button

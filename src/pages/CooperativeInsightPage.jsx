@@ -37,6 +37,7 @@ export const CooperativeInsightPage = ({ onNavigate }) => {
             src={cooperativeProfile.coverImage}
             alt={cooperativeProfile.name}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            onError={(e) => { e.target.style.display = 'none'; }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20, 83, 45, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%)' }} />
           <div style={{ position: 'absolute', bottom: '16px', left: '24px', right: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '12px' }}>
@@ -135,6 +136,7 @@ export const CooperativeInsightPage = ({ onNavigate }) => {
                       src={bu.imageUrl}
                       alt={bu.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => { e.target.style.display = 'none'; }}
                     />
                   </div>
                 )}

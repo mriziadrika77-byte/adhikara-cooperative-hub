@@ -242,57 +242,73 @@ export const CooperativeDiscoveryPage = ({ onNavigate }) => {
             <div
               key={coop.id}
               className="card"
-              style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.2s ease' }}
+              style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.2s ease', overflow: 'hidden', padding: 0 }}
             >
               <div>
-                {/* Header Card */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                {/* Gambar Sampul Koperasi */}
+                {coop.imageUrl && (
+                  <div style={{ position: 'relative', width: '100%', height: '150px', backgroundColor: '#e5e7eb', overflow: 'hidden' }}>
+                    <img
+                      src={coop.imageUrl}
+                      alt={coop.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div style={{ position: 'absolute', top: '10px', left: '10px', right: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '11px', color: '#1f2937', backgroundColor: 'rgba(255, 255, 255, 0.92)', backdropFilter: 'blur(4px)', padding: '3px 8px', borderRadius: 'var(--radius-sm)', fontWeight: 700 }}>
+                        {coop.bannerTag || coop.category}
+                      </span>
+                      <span style={{ fontSize: '11px', color: '#92400e', backgroundColor: 'rgba(254, 249, 237, 0.95)', backdropFilter: 'blur(4px)', padding: '3px 8px', borderRadius: 'var(--radius-sm)', fontWeight: 700 }}>
+                        ★ {coop.rating}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                <div style={{ padding: '16px 18px 0' }}>
+                  {/* Header Card */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
                     <StatusBadge label={coop.category} variant="emerald" />
-                    <span style={{ fontSize: '11px', color: '#92400e', backgroundColor: 'var(--color-gold-light)', padding: '2px 8px', borderRadius: 'var(--radius-sm)', fontWeight: 600 }}>
-                      ★ {coop.rating}
-                    </span>
+                    <StatusBadge
+                      label={coop.acceptanceStatus}
+                      variant={isOpen ? 'emerald' : 'gold'}
+                    />
                   </div>
-                  <StatusBadge
-                    label={coop.acceptanceStatus}
-                    variant={isOpen ? 'emerald' : 'gold'}
-                  />
-                </div>
 
-                <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-dark-text)', marginBottom: '4px' }}>
-                  {coop.name}
-                </h3>
+                  <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--color-dark-text)', marginBottom: '4px' }}>
+                    {coop.name}
+                  </h3>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px', color: 'var(--color-subtle-text)', marginBottom: '10px' }}>
-                  <MapPin size={13} color="var(--color-emerald)" />
-                  <span>{coop.city}, {coop.province}</span>
-                  <span>•</span>
-                  <span>{coop.totalMembers} Anggota</span>
-                </div>
-
-                <p style={{ fontSize: '13px', color: 'var(--color-muted-text)', lineHeight: 1.5, marginBottom: '14px' }}>
-                  {coop.shortDescription}
-                </p>
-
-                {/* Ringkasan Finansial Mini */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', padding: '10px', backgroundColor: 'var(--color-ivory)', borderRadius: 'var(--radius-md)', marginBottom: '16px', fontSize: '11px', textAlign: 'center' }}>
-                  <div>
-                    <div style={{ color: 'var(--color-subtle-text)' }}>Total Aset</div>
-                    <div style={{ fontWeight: 700, color: 'var(--color-dark-text)', marginTop: '2px' }}>{coop.financialHighlight.assets}</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px', color: 'var(--color-subtle-text)', marginBottom: '10px' }}>
+                    <MapPin size={13} color="var(--color-emerald)" />
+                    <span>{coop.city}, {coop.province}</span>
+                    <span>•</span>
+                    <span>{coop.totalMembers} Anggota</span>
                   </div>
-                  <div>
-                    <div style={{ color: 'var(--color-subtle-text)' }}>Omset Tahunan</div>
-                    <div style={{ fontWeight: 700, color: 'var(--color-dark-text)', marginTop: '2px' }}>{coop.financialHighlight.annualTurnover}</div>
-                  </div>
-                  <div>
-                    <div style={{ color: 'var(--color-deep-emerald)' }}>SHU Terbagi</div>
-                    <div style={{ fontWeight: 700, color: 'var(--color-deep-emerald)', marginTop: '2px' }}>{coop.financialHighlight.shuDistributed}</div>
+
+                  <p style={{ fontSize: '13px', color: 'var(--color-muted-text)', lineHeight: 1.5, marginBottom: '14px' }}>
+                    {coop.shortDescription}
+                  </p>
+
+                  {/* Ringkasan Finansial Mini */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', padding: '10px', backgroundColor: 'var(--color-ivory)', borderRadius: 'var(--radius-md)', marginBottom: '16px', fontSize: '11px', textAlign: 'center' }}>
+                    <div>
+                      <div style={{ color: 'var(--color-subtle-text)' }}>Total Aset</div>
+                      <div style={{ fontWeight: 700, color: 'var(--color-dark-text)', marginTop: '2px' }}>{coop.financialHighlight.assets}</div>
+                    </div>
+                    <div>
+                      <div style={{ color: 'var(--color-subtle-text)' }}>Omset Tahunan</div>
+                      <div style={{ fontWeight: 700, color: 'var(--color-dark-text)', marginTop: '2px' }}>{coop.financialHighlight.annualTurnover}</div>
+                    </div>
+                    <div>
+                      <div style={{ color: 'var(--color-deep-emerald)' }}>SHU Terbagi</div>
+                      <div style={{ fontWeight: 700, color: 'var(--color-deep-emerald)', marginTop: '2px' }}>{coop.financialHighlight.shuDistributed}</div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Tombol Aksi */}
-              <div style={{ display: 'flex', gap: '8px', borderTop: '1px solid var(--color-border-card)', paddingTop: '12px' }}>
+              <div style={{ display: 'flex', gap: '8px', borderTop: '1px solid var(--color-border-card)', padding: '14px 18px', backgroundColor: 'var(--color-white)' }}>
                 <button
                   type="button"
                   onClick={() => setActiveCoopDetail(coop)}
@@ -343,29 +359,55 @@ export const CooperativeDiscoveryPage = ({ onNavigate }) => {
         >
           <div
             className="card"
-            style={{ maxWidth: '680px', width: '100%', maxHeight: '90vh', overflowY: 'auto' }}
+            style={{ maxWidth: '680px', width: '100%', maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', padding: 0 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px solid var(--color-border-card)', paddingBottom: '10px' }}>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <StatusBadge label={activeCoopDetail.category} variant="emerald" />
-                <StatusBadge label={activeCoopDetail.acceptanceStatus} variant="gold" />
+            {/* Header Gambar Modal */}
+            {activeCoopDetail.imageUrl && (
+              <div style={{ position: 'relative', width: '100%', height: '180px', backgroundColor: '#e5e7eb' }}>
+                <img
+                  src={activeCoopDetail.imageUrl}
+                  alt={activeCoopDetail.name}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 70%)' }} />
+                <button
+                  type="button"
+                  onClick={() => setActiveCoopDetail(null)}
+                  style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#ffffff' }}
+                >
+                  <X size={18} />
+                </button>
+                <div style={{ position: 'absolute', bottom: '12px', left: '20px', display: 'flex', gap: '8px' }}>
+                  <StatusBadge label={activeCoopDetail.category} variant="emerald" />
+                  <StatusBadge label={activeCoopDetail.acceptanceStatus} variant="gold" />
+                </div>
               </div>
-              <button type="button" onClick={() => setActiveCoopDetail(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-subtle-text)' }}>
-                <X size={20} />
-              </button>
-            </div>
+            )}
 
-            <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-dark-text)', marginBottom: '4px' }}>
-              {activeCoopDetail.name}
-            </h2>
-            <p style={{ fontSize: '12.5px', color: 'var(--color-subtle-text)', marginBottom: '16px' }}>
-              No. Badan Hukum: <strong>{activeCoopDetail.legalNumber}</strong> • Alamat: {activeCoopDetail.address}
-            </p>
+            <div style={{ padding: '20px 24px' }}>
+              {!activeCoopDetail.imageUrl && (
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px solid var(--color-border-card)', paddingBottom: '10px' }}>
+                  <div style={{ display: 'flex', gap: '8px' }}>
+                    <StatusBadge label={activeCoopDetail.category} variant="emerald" />
+                    <StatusBadge label={activeCoopDetail.acceptanceStatus} variant="gold" />
+                  </div>
+                  <button type="button" onClick={() => setActiveCoopDetail(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-subtle-text)' }}>
+                    <X size={20} />
+                  </button>
+                </div>
+              )}
 
-            <p style={{ fontSize: '13.5px', color: 'var(--color-muted-text)', lineHeight: 1.6, marginBottom: '20px' }}>
-              {activeCoopDetail.shortDescription}
-            </p>
+              <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-dark-text)', marginBottom: '4px' }}>
+                {activeCoopDetail.name}
+              </h2>
+              <p style={{ fontSize: '12.5px', color: 'var(--color-subtle-text)', marginBottom: '16px' }}>
+                No. Badan Hukum: <strong>{activeCoopDetail.legalNumber}</strong> • Alamat: {activeCoopDetail.address}
+              </p>
+
+              <p style={{ fontSize: '13.5px', color: 'var(--color-muted-text)', lineHeight: 1.6, marginBottom: '20px' }}>
+                {activeCoopDetail.shortDescription}
+              </p>
 
             {/* Manfaat Menjadi Anggota */}
             <div style={{ marginBottom: '18px', padding: '14px 16px', backgroundColor: 'var(--color-emerald-light)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-emerald-border)' }}>
@@ -414,7 +456,8 @@ export const CooperativeDiscoveryPage = ({ onNavigate }) => {
             </div>
           </div>
         </div>
-      )}
+      </div>
+    )}
 
       {/* Modal Komparasi Koperasi */}
       {isCompareModalOpen && (

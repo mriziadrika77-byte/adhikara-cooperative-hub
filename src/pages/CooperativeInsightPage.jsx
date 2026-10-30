@@ -30,28 +30,33 @@ export const CooperativeInsightPage = ({ onNavigate }) => {
       />
 
       {/* Ringkasan Profil Koperasi */}
-      <div className="card" style={{ marginBottom: '24px' }}>
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', borderBottom: '1px solid var(--color-border-card)', paddingBottom: '18px', marginBottom: '18px' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--color-dark-text)' }}>
+      <div className="card" style={{ marginBottom: '24px', overflow: 'hidden', padding: 0 }}>
+        {/* Cover Photo Koperasi */}
+        <div style={{ position: 'relative', width: '100%', height: '200px', backgroundColor: '#e5e7eb' }}>
+          <img
+            src={cooperativeProfile.coverImage}
+            alt={cooperativeProfile.name}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20, 83, 45, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%)' }} />
+          <div style={{ position: 'absolute', bottom: '16px', left: '24px', right: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '12px' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                <span style={{ fontSize: '11px', color: '#1f2937', backgroundColor: 'var(--color-gold)', padding: '2px 8px', borderRadius: 'var(--radius-sm)', fontWeight: 700 }}>
+                  Sentra Agribisnis Terpadu
+                </span>
+                <span style={{ fontSize: '11px', color: '#ffffff', backgroundColor: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)', padding: '2px 8px', borderRadius: 'var(--radius-sm)' }}>
+                  Didirikan {cooperativeProfile.foundedYear}
+                </span>
+              </div>
+              <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
                 {cooperativeProfile.name}
               </h2>
-              <StatusBadge label="Badan Hukum Resmi" variant="emerald" />
-              <StatusBadge label="Data Simulasi" variant="gold" />
             </div>
-            <p style={{ fontSize: '13px', color: 'var(--color-subtle-text)' }}>
-              No. Badan Hukum: <strong>{cooperativeProfile.legalNumber}</strong> • Berdiri sejak tahun {cooperativeProfile.foundedYear}
-            </p>
-            <p style={{ fontSize: '13px', color: 'var(--color-muted-text)', marginTop: '4px' }}>
-              📍 {cooperativeProfile.address} • Jumlah Anggota Terdaftar: <strong>{cooperativeProfile.totalMembers} orang</strong>
-            </p>
-          </div>
-          <div style={{ display: 'flex', gap: '10px' }}>
             <button
               type="button"
               className="btn-primary"
-              style={{ fontSize: '13px', padding: '8px 14px' }}
+              style={{ fontSize: '13px', padding: '8px 14px', backgroundColor: 'var(--color-emerald)' }}
               onClick={() => onNavigate('ideas')}
             >
               Usulkan Ide Bisnis <ArrowRight size={14} />
@@ -59,28 +64,45 @@ export const CooperativeInsightPage = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Visi & Misi */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
-          <div style={{ backgroundColor: 'var(--color-ivory)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-card)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', color: 'var(--color-deep-emerald)', fontWeight: 600 }}>
-              <Compass size={18} />
-              <span>Visi Koperasi</span>
+        <div style={{ padding: '20px 24px' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', borderBottom: '1px solid var(--color-border-card)', paddingBottom: '16px', marginBottom: '18px' }}>
+            <div>
+              <p style={{ fontSize: '13px', color: 'var(--color-subtle-text)' }}>
+                No. Badan Hukum: <strong>{cooperativeProfile.legalNumber}</strong> • Status: <strong style={{ color: 'var(--color-deep-emerald)' }}>Badan Hukum Resmi</strong>
+              </p>
+              <p style={{ fontSize: '13px', color: 'var(--color-muted-text)', marginTop: '4px' }}>
+                📍 {cooperativeProfile.address} • Jumlah Anggota Terdaftar: <strong>{cooperativeProfile.totalMembers} orang</strong>
+              </p>
             </div>
-            <p style={{ fontSize: '13.5px', color: 'var(--color-dark-text)', lineHeight: 1.6 }}>
-              "{cooperativeProfile.vision}"
-            </p>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <StatusBadge label="Badan Hukum Resmi" variant="emerald" />
+              <StatusBadge label="Data Simulasi" variant="gold" />
+            </div>
           </div>
 
-          <div style={{ backgroundColor: 'var(--color-ivory)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-card)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', color: 'var(--color-deep-emerald)', fontWeight: 600 }}>
-              <CheckCircle2 size={18} />
-              <span>Misi Koperasi</span>
+          {/* Visi & Misi */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+            <div style={{ backgroundColor: 'var(--color-ivory)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-card)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', color: 'var(--color-deep-emerald)', fontWeight: 600 }}>
+                <Compass size={18} />
+                <span>Visi Koperasi</span>
+              </div>
+              <p style={{ fontSize: '13.5px', color: 'var(--color-dark-text)', lineHeight: 1.6 }}>
+                "{cooperativeProfile.vision}"
+              </p>
             </div>
-            <ul style={{ paddingLeft: '18px', fontSize: '13px', color: 'var(--color-dark-text)', lineHeight: 1.5 }}>
-              {cooperativeProfile.mission.map((m, idx) => (
-                <li key={idx} style={{ marginBottom: '6px' }}>{m}</li>
-              ))}
-            </ul>
+
+            <div style={{ backgroundColor: 'var(--color-ivory)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-card)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px', color: 'var(--color-deep-emerald)', fontWeight: 600 }}>
+                <CheckCircle2 size={18} />
+                <span>Misi Koperasi</span>
+              </div>
+              <ul style={{ paddingLeft: '18px', fontSize: '13px', color: 'var(--color-dark-text)', lineHeight: 1.5 }}>
+                {cooperativeProfile.mission.map((m, idx) => (
+                  <li key={idx} style={{ marginBottom: '6px' }}>{m}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -98,24 +120,38 @@ export const CooperativeInsightPage = ({ onNavigate }) => {
               <div
                 key={bu.id}
                 style={{
-                  padding: '14px 16px',
+                  display: 'flex',
+                  gap: '14px',
+                  padding: '12px 14px',
                   backgroundColor: 'var(--color-ivory)',
                   borderRadius: 'var(--radius-md)',
-                  border: '1px solid var(--color-border-card)'
+                  border: '1px solid var(--color-border-card)',
+                  alignItems: 'center'
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                  <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-dark-text)' }}>
-                    {bu.name}
-                  </span>
-                  <StatusBadge label={bu.status} variant="emerald" />
-                </div>
-                <p style={{ fontSize: '12.5px', color: 'var(--color-subtle-text)', marginBottom: '8px' }}>
-                  {bu.description}
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--color-muted-text)', borderTop: '1px dashed var(--color-border-card)', paddingTop: '6px' }}>
-                  <span>Penanggung Jawab: <strong>{bu.manager}</strong></span>
-                  <span>Kontribusi Omset: <strong>{bu.revenueContribution}</strong></span>
+                {bu.imageUrl && (
+                  <div style={{ width: '84px', height: '84px', borderRadius: 'var(--radius-sm)', overflow: 'hidden', flexShrink: 0 }}>
+                    <img
+                      src={bu.imageUrl}
+                      alt={bu.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                    <span style={{ fontSize: '13.5px', fontWeight: 600, color: 'var(--color-dark-text)' }}>
+                      {bu.name}
+                    </span>
+                    <StatusBadge label={bu.status} variant="emerald" />
+                  </div>
+                  <p style={{ fontSize: '12px', color: 'var(--color-subtle-text)', marginBottom: '6px', lineHeight: 1.4 }}>
+                    {bu.description}
+                  </p>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11.5px', color: 'var(--color-muted-text)', borderTop: '1px dashed var(--color-border-card)', paddingTop: '4px' }}>
+                    <span>Penanggung Jawab: <strong>{bu.manager}</strong></span>
+                    <span>Omset: <strong>{bu.revenueContribution}</strong></span>
+                  </div>
                 </div>
               </div>
             ))}
